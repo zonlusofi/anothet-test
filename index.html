@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Happy Father's Day!</title>
+  <style>
+    body {
+      background: #fcefee;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      margin: 0;
+      font-family: 'Comic Sans MS', cursive;
+    }
+
+    .cake {
+      background: #ffb6b9;
+      width: 250px;
+      height: 200px;
+      border-radius: 10px 10px 0 0;
+      position: relative;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+      text-align: center;
+      padding-top: 80px;
+      color: white;
+      font-size: 20px;
+      font-weight: bold;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    .cake:hover {
+      box-shadow: 0 0 25px #ffc0cb;
+      transform: scale(1.02);
+    }
+
+    .cake::before {
+      content: '';
+      position: absolute;
+      top: -30px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 150px;
+      height: 40px;
+      background: #fcd5ce;
+      border-radius: 50% 50% 0 0;
+    }
+
+    .letters {
+      font-size: 20px;
+      line-height: 30px;
+    }
+
+    .message {
+      margin-top: 30px;
+      font-size: 16px;
+      color: #333;
+      text-align: center;
+      font-style: italic;
+    }
+
+    .popup {
+      display: none;
+      position: absolute;
+      background: #fff0f5;
+      border: 2px solid #ffb6b9;
+      padding: 20px;
+      border-radius: 10px;
+      top: 60%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+      font-family: 'Comic Sans MS', cursive;
+    }
+
+    .popup.show {
+      display: block;
+      animation: fade 0.5s ease-in-out;
+    }
+
+    @keyframes fade {
+      from { opacity: 0; transform: translate(-50%, -60%); }
+      to { opacity: 1; transform: translate(-50%, -50%); }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="cake" onclick="showPopup()">
+    <div class="letters">
+      🎂 HAPPY <br />
+      FATHER’S <br />
+      DAY 💙
+    </div>
+  </div>
+
+  <div class="message">
+    You're the sweetest dad ever. Thanks for everything! 💖
+  </div>
+
+  <div class="popup" id="popup">
+    💌 Surprise!<br />
+    You're the best dad in the world. I love you always. 💙
+  </div>
+
+  <script>
+    function showPopup() {
+      const popup = document.getElementById("popup");
+      popup.classList.toggle("show");
+    }
+  </script>
+
+</body>
+</html>
